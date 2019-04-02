@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="sample.web.ui.MessageControllerWebTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-04-02T04:45:36" hostname="seouimacbookpro.kr.ibm.com" time="0.51">
+  <properties/>
+  <testcase name="testHome" classname="sample.web.ui.MessageControllerWebTests" time="0.414"/>
+  <testcase name="testCreateValidation" classname="sample.web.ui.MessageControllerWebTests" time="0.085"/>
+  <testcase name="testCreate" classname="sample.web.ui.MessageControllerWebTests" time="0.009"/>
+  <system-out><![CDATA[2019-04-02 13:45:34.108  INFO   --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [sample.web.ui.MessageControllerWebTests], using SpringBootContextLoader
+2019-04-02 13:45:34.115  INFO   --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [sample.web.ui.MessageControllerWebTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-04-02 13:45:34.117  INFO   --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [sample.web.ui.MessageControllerWebTests]: MessageControllerWebTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-04-02 13:45:34.187  INFO   --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration sample.web.ui.SampleWebUiApplication for test class sample.web.ui.MessageControllerWebTests
+2019-04-02 13:45:34.256  INFO   --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-04-02 13:45:34.265  INFO   --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6166f815, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6ed4aa13, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1dab570a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7c08a43f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a784dfb, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@6137fe95, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@26e3f6be, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1f738701, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@778c1681, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@29118db3]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.3.RELEASE)
+
+2019-04-02 13:45:34.486  INFO 5359 --- [    Test worker] sample.web.ui.MessageControllerWebTests  : Starting MessageControllerWebTests on seouimacbookpro.kr.ibm.com with PID 5359 (started by seowonchoi in /Users/seowonchoi/Github/spring_boot/spring-boot-samples/spring-boot-sample-web-ui)
+2019-04-02 13:45:34.487  INFO 5359 --- [    Test worker] sample.web.ui.MessageControllerWebTests  : No active profile set, falling back to default profiles: default
+2019-04-02 13:45:34.510  INFO 5359 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@32233547: startup date [Tue Apr 02 13:45:34 KST 2019]; root of context hierarchy
+2019-04-02 13:45:35.506  INFO 5359 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-02 13:45:35.685  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@32233547: startup date [Tue Apr 02 13:45:34 KST 2019]; root of context hierarchy
+2019-04-02 13:45:35.755  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView sample.web.ui.mvc.MessageController.list()
+2019-04-02 13:45:35.757  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/delete/{id}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView sample.web.ui.mvc.MessageController.delete(java.lang.Long)
+2019-04-02 13:45:35.758  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView sample.web.ui.mvc.MessageController.create(sample.web.ui.Message,org.springframework.validation.BindingResult,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2019-04-02 13:45:35.758  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/foo]}" onto public java.lang.String sample.web.ui.mvc.MessageController.foo()
+2019-04-02 13:45:35.759  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET],params=[form]}" onto public java.lang.String sample.web.ui.mvc.MessageController.createForm(sample.web.ui.Message)
+2019-04-02 13:45:35.759  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/modify/{id}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView sample.web.ui.mvc.MessageController.modifyForm(sample.web.ui.Message)
+2019-04-02 13:45:35.760  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/{id}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView sample.web.ui.mvc.MessageController.view(sample.web.ui.Message)
+2019-04-02 13:45:35.762  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-04-02 13:45:35.763  INFO 5359 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-04-02 13:45:35.785  INFO 5359 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-02 13:45:35.785  INFO 5359 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-04-02 13:45:35.993  INFO 5359 --- [    Test worker] sample.web.ui.MessageControllerWebTests  : Started MessageControllerWebTests in 1.703 seconds (JVM running for 2.585)
+2019-04-02 13:45:36.058  INFO 5359 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2019-04-02 13:45:36.059  INFO 5359 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2019-04-02 13:45:36.067  INFO 5359 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 8 ms
+2019-04-02 13:45:36.424  INFO 5359 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2019-04-02 13:45:36.424  INFO 5359 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2019-04-02 13:45:36.426  INFO 5359 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+2019-04-02 13:45:36.509  INFO 5359 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2019-04-02 13:45:36.510  INFO 5359 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2019-04-02 13:45:36.512  INFO 5359 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 2 ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

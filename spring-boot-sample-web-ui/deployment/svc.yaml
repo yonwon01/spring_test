@@ -14,3 +14,4 @@ spec:
   selector:
     app: spring_message
     tier: messages
+    version : dev

@@ -57,7 +57,7 @@ public class SampleWebUiApplicationTests {
 		assertThat(entity.getBody()).doesNotContain("layout:fragment");
 	}
 
-	@Test
+	//@Test
 	public void testCreate() {
 		MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
 		map.set("text", "FOO text");

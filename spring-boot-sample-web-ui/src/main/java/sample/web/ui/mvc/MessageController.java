@@ -65,7 +65,9 @@ public class MessageController {
 		}
 		message = this.messageRepository.save(message);
 		redirect.addFlashAttribute("globalMessage", "view.success");
-		return new ModelAndView("redirect:/{message.id}", "message.id", message.getId());
+		//return new ModelAndView("redirect:/{message.id}", "message.id", message.getId());
+    //return new ModelAndView("messages/view", "message", message.getId());
+		return new ModelAndView("messages/view", "message", message);
 	}
 
 	@RequestMapping("foo")

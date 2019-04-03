@@ -12,6 +12,7 @@ spec:
       labels:
         app: spring_message
         tier: messages
+        version: dev
     spec:
       containers:
         - image: yonwon01/spring_test:latest

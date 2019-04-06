@@ -44,11 +44,31 @@
     ![dockerRegisry]()
     
     5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)]()
-       -  yaml 파일에 이미지파일을 말아서 구성한다
+       -  spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 단위로 생성한다
        -  yaml 파일 : blue_deploy.yaml, svc.yaml
-       
-     spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 를 생성한다
-     ```
-       kubectl creeate -f blue_deployment.yaml
-       kubectl create -f svc.yaml
-     ```  
+       -  파일 포맷은 yaml파일을 이용한다
+        ```
+          kubectl creeate -f blue_deployment.yaml
+          kubectl create -f svc.yaml
+        ```  
+       -  pod(container),svc가 생성된 것을 확인할 수 있다
+        ```
+          kubectl get pod
+          kubectl get svc
+        ```  
+       - docker container 확인
+       ```
+          docker container ls
+       ```  
+3) 어플리케이션들의 Log 는 Host 에 file 로 적재
+     1) spring-boot-sample-web-ui어플리케이션의 application.properties 에 logging 설정을 해준다.
+     2)  웹어플리케이션을 뛰운 노드로 접속 -> 웹어플리케이션 컨테이너로 접속 -> log file 위치로 이동 후 확인
+     
+      ```
+         ssh root@workernodeIP
+         docker container exec -it 컨테이너id sh
+         cd /var/message-service
+         cat sample_app.log
+      ```  
+      
+4)

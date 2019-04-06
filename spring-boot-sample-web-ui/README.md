@@ -46,3 +46,9 @@
     5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)]()
        -  yaml 파일에 이미지파일을 말아서 구성한다
        -  yaml 파일 : blue_deploy.yaml, svc.yaml
+       
+     spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 를 생성한다
+     ```
+       kubectl creeate -f blue_deployment.yaml
+       kubectl create -f svc.yaml
+     ```  

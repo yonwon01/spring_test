@@ -13,7 +13,7 @@
      ```
      2) build.gradle에 스크립트 작성하기
     
-    3) 빌드하기
+     3) 빌드하기
      
      ```
     gradle build
@@ -23,18 +23,17 @@
     cd build/libs/
      ```
 ![jar파일경로.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/Zu8AyfmQlaJbM68KengQ_jar%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9.png)
-    
-    5) 어플리케이션 실행
-     ```
-    java -jar [jar파일]
-     ```
+      5) 어플리케이션 실행
+      ```
+      java -jar [jar파일]
+      ```
+     
 ![java실행.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/GeNrXPDpRcCRiws1Xtp3_java%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC.png)
      
 2) 어플리케이션은 모두 컨테이너로 구성하기
     1) 어플리케이션을 컨테이너로 생성하기 위해 이미지파일(Dockerfile) 생성하기
 
 ![Dockerfile.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/JrDf1LAxRKqWNaCnfPC6_Dockerfile.png)
-
     2) Dockerfile 빌드하기
       ```
        docker build . -t yonwon01/spring_test
@@ -46,7 +45,7 @@
     4) docker registry에 이미지 파일 올라온것 확인하기
 ![스크린샷 2019-04-06 오후 12.44.47.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/fFJGhP10QaeQ7zMQ2Lm4_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-04-06%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2012.44.47.png)
    
-    5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)]()
+   5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)]()
        -  spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 단위로 생성하기
        -  yaml 파일 : blue_deploy.yaml, svc.yaml
        -  파일 포맷은 yaml파일을 이용함
@@ -70,8 +69,7 @@
 3) 어플리케이션들의 Log 는 Host 에 file 로 적재
      1) spring-boot-sample-web-ui어플리케이션의 application.properties 에 logging 설정 하기
 ![스크린샷 2019-04-06 오후 4.45.15.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/pAg46WgTfK7JTLEtr91Q_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-04-06%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%204.45.15.png)
-     
-     2)  웹어플리케이션을 뛰운 노드로 접속 -> 웹어플리케이션 컨테이너로 접속 -> log file 위치로 이동 후 확인
+      2)  웹어플리케이션을 뛰운 노드로 접속 -> 웹어플리케이션 컨테이너로 접속 -> log file 위치로 이동 후 확인
      
       ```
          ssh root@workernodeIP
@@ -170,7 +168,6 @@
 6) 어플리케이션 REST API 추가 - GET /health] Health check 구현하기
      1)  Json Object 형태로 응답할 수 있도록 구현 - HashMap 사용(MessagesController.java)
 ![health구현.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/JrBRl3u9QaOY1ezeOpkj_health%E1%84%80%E1%85%AE%E1%84%92%E1%85%A7%E1%86%AB.png)
-   
      2)  IP:PORT/health
    
 ![스크린샷 2019-04-07 오후 6.50.20.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/pzXAR6SmSNaDNHiu0kpt_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-04-07%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.50.20.png)

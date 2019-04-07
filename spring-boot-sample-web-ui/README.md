@@ -60,12 +60,12 @@
                      kubectl get svc
                    ```  
 
-        ![message-get.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/1Wr6Pw53SmespCdUD67i_message-get.png)
+         ![message-get.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/1Wr6Pw53SmespCdUD67i_message-get.png)
            - docker container 확인하기
               ```
                  docker container ls
               ```  
-       ![container-messages.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/y3CgMACbTAunEQxbJnvQ_container-messages.png)
+         ![container-messages.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/y3CgMACbTAunEQxbJnvQ_container-messages.png)
 
 3) 어플리케이션들의 Log 는 Host 에 file 로 적재
      1) spring-boot-sample-web-ui어플리케이션의 application.properties 에 logging 설정 하기

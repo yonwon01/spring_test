@@ -1,7 +1,10 @@
-# DevOps_190407
+
 ### DevOps 실습하기
 
-* 개발 환경 : mac, 클라우드 master node
+* 개발 환경 : 
+   - OS : mac
+   - 서버 : ibm private cloud 
+   - editor : atom,eclipse
 
 * spring-boot예제 이용 : [spring-boot-sample-web-ui)](https://github.com/spring-projects/spring-boot/tree/v2.0.2.RELEASE/spring-boot-samples/spring-boot-sample-web-ui) 
 
@@ -46,7 +49,7 @@
      4) docker registry에 이미지 파일 올라온것 확인하기
        ![스크린샷 2019-04-06 오후 12.44.47.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/fFJGhP10QaeQ7zMQ2Lm4_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-04-06%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2012.44.47.png)
 
-      5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)]()
+      5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)](https://github.com/yonwon01/TIL/tree/master/Kubernetes)
            -  spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 단위로 생성하기
            -  yaml 파일 : blue_deploy.yaml, svc.yaml
            -  파일 포맷은 yaml파일을 이용함

@@ -78,11 +78,11 @@
          cd /var/message-service
          cat sample_app.log
       ```  
-![logFile.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/mAAyLnNmR9rjuumjP2bw_logFile.png)
+     ![logFile.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/mAAyLnNmR9rjuumjP2bw_logFile.png)
 
 
       
-4) container sacle in/out 하기
+  4) container sacle in/out 하기
      1) kubecrnetes 의 replicaset을 통해 pod의 수를 증가 감소 시킨다
      ```
      kubectl scale deployment [deployment이름] --replicas [갯수]

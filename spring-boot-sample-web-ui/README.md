@@ -83,6 +83,9 @@
      1) nginx:1.10-alpine 이미지를 pod(쿠버네티스의 최소 실행단위),service 단위로 생성하기
          - nginx 구성파일을 yaml로 작성
          - yaml 파일 : nginx-configfile.yaml, nginx.yaml, nginx-service.yaml
+         - 웹서버는 Reverse proxy 80 port, Round robin 방식으로 설정 
+         - nginx의 환경설정 (configuration file) 은 /etc/nginx/nginx.config 에서 가능하다 : kuberentes의 configmap으로 올리기위해 nginx-configmap.yaml에 구성했다
+         - Nginx 에서 제공하는 Load Balancing method 는 3가지가 있는데 default가 라운드로빈방식 이다
          
       ```
          kubectl create -f nginx-configfile.yaml
@@ -97,7 +100,56 @@
       ![svc]()
       ![화면보여주기 ]()
    
-6) 무중단배포
+6) 무중단배포 - 블루그린 배포하기
+     1) 배포되어있는 pod 갯수만큼 더 생성하여 기존버전에서 새 버전으로 배포할 수 있도록 한다.
+      ```
+     kubectl apply -f $DEPLOYMENTFILE
+      ```
+     2) green_deploy.yaml파일을 생성하여 기존의 blue_deploy.yaml에서 버전만 dev->opr로 변경하고 실행해본다.
+      
+     ```
+       apiVersion: extensions/v1beta1
+       kind: Deployment
+       metadata:
+         name: messages-opr
+         labels:
+           app: spring_message
+       spec:
+         strategy:
+           type: Recreate
+         replicas: 1
+         minReadySeconds: 5
+         template:
+           metadata:
+             labels:
+               app: spring-message
+               name: messages
+               version : opr
+           spec:
+             containers:
+               - image: yonwon01/spring_test:latest
+                 imagePullPolicy: Always
+                 name: messages-opr
+                 ports:
+                   - containerPort: 8082
+     ```
+
+     3) 무중단 배포 스크립트는 shell로 작성하였으며 실제 로드밸런싱이 되는 서비스 에서 selector의 version 이 dev->opr로 변경되도록 patch 한다.
+     ```
+     kubectl patch svc 서비스이름 -p '{"spec":{"selector":{"name":"messages","version":"opr"}}}'
+     ```
+     4) nginx의 80포트가 기존의 messages-dev 파드(blue포트(8081))에서 messages-opr 파드  (green(8082))으로 바라본다.
+     
+     5) 쉘 실행 (쉘의 설명은 bluegreen.sh 주석참고)
+     ```
+     sh ./bluegreen.sh messages-service opr deployment/green_deploy.yaml
+     ```
+     
+6) 어플리케이션 REST API 추가 - GET /health] Health check 구현하기
+     1)  Json Object 형태로 응답할 수 있도록 구현 - HashMap 사용(MessagesController.java)
+     ![ health구현]()
+     2)  IP:PORT/health
+     ![health ]()
      
      
      

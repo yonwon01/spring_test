@@ -25,7 +25,7 @@
      ```
     cd build/libs/
      ```
-        ![jar파일경로.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/Zu8AyfmQlaJbM68KengQ_jar%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9.png)
+       ![jar파일경로.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/Zu8AyfmQlaJbM68KengQ_jar%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9.png)
       5) 어플리케이션 실행
       ```
       java -jar [jar파일]

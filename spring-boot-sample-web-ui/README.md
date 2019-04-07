@@ -22,7 +22,7 @@
      ```
     cd build/libs/
      ```
-![jar파일경로.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/Zu8AyfmQlaJbM68KengQ_jar%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9.png)
+        ![jar파일경로.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/Zu8AyfmQlaJbM68KengQ_jar%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9.png)
       5) 어플리케이션 실행
       ```
       java -jar [jar파일]
@@ -47,21 +47,21 @@
        ![스크린샷 2019-04-06 오후 12.44.47.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/fFJGhP10QaeQ7zMQ2Lm4_%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-04-06%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2012.44.47.png)
 
       5) kubernetes를 통해 컨테이너 실행시키기 : [쿠버네티스 설명)]()
-              -  spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 단위로 생성하기
-              -  yaml 파일 : blue_deploy.yaml, svc.yaml
-              -  파일 포맷은 yaml파일을 이용함
-               ```
-                 kubectl creeate -f blue_deployment.yaml
-                 kubectl create -f svc.yaml
-               ```  
-              -  pod(container),svc가 생성된 것을 확인하기
-               ```
-                 kubectl get pod
-                 kubectl get svc
-               ```  
+           -  spring-boot-sample-web-ui어플리케이션 이미지를 pod(쿠버네티스의 최소 실행단위),service 단위로 생성하기
+           -  yaml 파일 : blue_deploy.yaml, svc.yaml
+           -  파일 포맷은 yaml파일을 이용함
+                   ```
+                     kubectl creeate -f blue_deployment.yaml
+                     kubectl create -f svc.yaml
+                   ```  
+           -  pod(container),svc가 생성된 것을 확인하기
+                   ```
+                     kubectl get pod
+                     kubectl get svc
+                   ```  
 
-          ![message-get.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/1Wr6Pw53SmespCdUD67i_message-get.png)
-              - docker container 확인하기
+        ![message-get.png](https://s3-ap-northeast-1.amazonaws.com/torchpad-production/wikis/10853/1Wr6Pw53SmespCdUD67i_message-get.png)
+           - docker container 확인하기
               ```
                  docker container ls
               ```  

@@ -16,6 +16,9 @@
 
 package sample.web.ui.mvc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import sample.web.ui.Message;
@@ -28,6 +31,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -86,5 +90,13 @@ public class MessageController {
 	public ModelAndView modifyForm(@PathVariable("id") Message message) {
 		return new ModelAndView("messages/form", "message", message);
 	}
+
+    @ResponseBody
+    @GetMapping("health")
+    public HashMap<String, Object> health() {
+      return  new HashMap<String, Object>() {{
+           put("status", "OK");
+       }};
+   }
 
 }

@@ -10,8 +10,8 @@ spec:
     - port: 80
       protocol: TCP
       targetPort: 8080
-      nodePort: 32003
+      nodePort: 32005
   selector:
-    app: spring_message
-    tier: messages
+    app: spring-message
+    name: messages
     version : dev

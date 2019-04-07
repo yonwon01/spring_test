@@ -1,0 +1,5 @@
+zuul:
+  prefix: /
+  ignoredServices: '*'
+  routes:
+    messages-service: /**

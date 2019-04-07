@@ -1,22 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: messages
+  name: messages-dev
   labels:
     app: spring_message
 spec:
   strategy:
     type: Recreate
+  replicas: 3
+  minReadySeconds: 5
   template:
     metadata:
       labels:
-        app: spring_message
-        tier: messages
+        app: spring-message
+        name: messages
         version: dev
     spec:
       containers:
         - image: yonwon01/spring_test:latest
           imagePullPolicy: Always
-          name: messages
+          name: messages-dev
           ports:
-            - containerPort: 8080
+            - containerPort: 8081

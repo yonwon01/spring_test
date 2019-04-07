@@ -10,7 +10,7 @@ spec:
     - port: 80
       protocol: TCP
       targetPort: 80
-      nodePort: 32012
+      nodePort: 32013
   selector:
     app: spring_message
     tier: nginx
